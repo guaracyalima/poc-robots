@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:botDetect="https://captcha.com/java/jsf">
+<h:head>
+	<title>SIMIL POC CHAPTA</title>
+	<h:outputStylesheet name="stylesheet.css" library="css" />
+</h:head>
+<h:body>
+	<h:form prependId="false" styleClass="column">
+		<h1>
+			SIMIL POC CAPTCHA<br />
+		</h1>
+		<fieldset>
+			<legend>SIMIL FORM</legend>
+			<h:inputText value = "value!" /> 
+			
+			<h:outputLabel for="captchaCode"
+				value="Digite os caracteres da imagem abaixo" />
+
+			<!-- Adding BotDetect Captcha to the page -->
+			<botDetect:jsfCaptcha id="faceletsExampleCaptcha"
+				userInputID="captchaCode"
+				binding="#{jsfFaceletsCaptchaExample.captcha}" />
+
+			<div class="validationDiv">
+				<h:inputText id="captchaCode"
+					value="#{jsfFaceletsCaptchaExample.captchaCode}" />
+				<h:commandButton action="#{jsfFaceletsCaptchaExample.validate}"
+					value="Validate" />
+				<h:outputText value="Correct code" styleClass="correct"
+					rendered="#{jsfFaceletsCaptchaExample.correctLabelVisible}" />
+				<h:outputText value="Incorrect code" styleClass="incorrect"
+					rendered="#{jsfFaceletsCaptchaExample.incorrectLabelVisible}" />
+			</div>
+		</fieldset>
+		<input type="submit" value="submit" />
+ 	</h:form>
+</h:body>
+</html>
