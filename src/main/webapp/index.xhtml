@@ -23,17 +23,17 @@
 			<!-- Adding BotDetect Captcha to the page -->
 			<botDetect:jsfCaptcha id="faceletsExampleCaptcha"
 				userInputID="captchaCode"
-				binding="#{jsfFaceletsCaptchaExample.captcha}" />
+				binding="#{faceletsCaptcha.captcha}" />
 
 			<div class="validationDiv">
 				<h:inputText id="captchaCode"
-					value="#{jsfFaceletsCaptchaExample.captchaCode}" />
-				<h:commandButton action="#{jsfFaceletsCaptchaExample.validate}"
+					value="#{faceletsCaptcha.captchaCode}" />
+				<h:commandButton action="#{faceletsCaptcha.validate}"
 					value="Validate" />
 				<h:outputText value="Correct code" styleClass="correct"
-					rendered="#{jsfFaceletsCaptchaExample.correctLabelVisible}" />
+					rendered="#{faceletsCaptcha.correctLabelVisible}" />
 				<h:outputText value="Incorrect code" styleClass="incorrect"
-					rendered="#{jsfFaceletsCaptchaExample.incorrectLabelVisible}" />
+					rendered="#{faceletsCaptcha.incorrectLabelVisible}" />
 			</div>
 		</fieldset>
 		<input type="submit" value="submit" />

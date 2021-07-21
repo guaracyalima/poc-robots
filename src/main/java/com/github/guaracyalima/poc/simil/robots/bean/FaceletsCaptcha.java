@@ -4,7 +4,7 @@ import com.captcha.botdetect.web.jsf.JsfCaptcha;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-@ManagedBean(name = "jsfFaceletsCaptchaExample")
+@ManagedBean(name = "faceletsCaptcha")
 @RequestScoped
 public class FaceletsCaptcha {
 
@@ -40,8 +40,8 @@ public class FaceletsCaptcha {
 	}
 
 	public void validate() {
-		// validate the Captcha to check we're not dealing with a bot
 		boolean isHuman = captcha.validate(captchaCode);
+
 		if (isHuman) {
 			correctLabelVisible = true;
 			incorrectLabelVisible = false;
